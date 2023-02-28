@@ -69,8 +69,15 @@ async function fetchPoshmarkQuery(query, overrides = {}) {
                 ...options,
                 max_id: nextMaxId,
             };
-            const url = `/api/proxy?request=${encodeURIComponent(JSON.stringify(request))}&summarize=true&pm_version=233.0.0`;
-            const response = await axios.get(url);
+            const url = `https://cors-anywhere.herokuapp.com/poshmark.com/vm-rest/api/proxy?request=${encodeURIComponent(JSON.stringify(request))}&summarize=true&pm_version=233.0.0`;
+            console.log(url)
+            const response = await axios.get(url, {
+                headers: {
+                    'Origin': 'http://localhost:3001', // add your origin URL here
+                    'X-Requested-With': 'XMLHttpRequest' // add the X-Requested-With header
+                }
+            });
+            console.log(response)
             const data = response.data;
 
             // Append the results to the allData array
