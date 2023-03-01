@@ -7,7 +7,7 @@ function PoshmarkSearchForm({ onSubmit }) {
     const [color, setColor] = useState([]);
     const [inventoryStatus, setInventoryStatus] = useState([]);
     const [brand, setBrand] = useState('');
-    const [count, setCount] = useState(48);
+    const [count, setCount] = useState(500);
 
     function handleQueryChange(event) {
         setQuery(event.target.value);
@@ -88,7 +88,7 @@ function PoshmarkSearchForm({ onSubmit }) {
             </select><br />
 
             <label htmlFor="count">Number of Results:</label>
-            <input type="number" id="count" name="count" min="1" max="100" value={count} onChange={handleCountChange} /><br />
+            <input type="number" id="count" name="count" min="1" max="500" value={count} onChange={handleCountChange} /><br />
 
             <button type="submit">Search</button>
         </form>

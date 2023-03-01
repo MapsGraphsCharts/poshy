@@ -6,7 +6,7 @@ async function fetchPoshmarkQuery(url) {
     try {
         let allData = [];
 
-        const maxCalls = 5;
+        const maxCalls = 9992d6;
         let numCalls = 0; // initialize the number of API calls made
         let nextMaxId = 1;
 
